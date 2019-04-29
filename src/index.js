@@ -1,6 +1,7 @@
 console.log("Hello from JavaScript");
 //const marker = require('./marker')
 const mapboxgl = require("mapbox-gl");
+console.log(mapboxgl)
 
 mapboxgl.accessToken = "pk.eyJ1IjoiYWxleGJhcmJlciIsImEiOiJjanYyams1bWMyNWJ5NGVzZHFmdXN4a3EyIn0.CzoEZKNCmAqkFPsspFAm6w";
 
