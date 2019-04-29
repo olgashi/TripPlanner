@@ -7,24 +7,13 @@ const iconURLs = {
     activities: "http://i.imgur.com/WbMOfMl.png"
 };
 
-const buildMarker = function(type,coords){
-    if (type==='hotel'){
-        markerDomEl.style.backgroundImage=`url(${iconURLs.hotels})`
-    }
-    return(new mapboxgl.Marker(markerDomEl).setLngLat(coords))
+const buildMarker = function(typeOfIcon,coords){
+	const markerDomEl = document.createElement('div'); // Create a new, detached DIV
+	markerDomEl.style.width = '32px';
+	markerDomEl.style.height = '39px';
+  markerDomEl.style.backgroundImage=`url(${iconURLs[typeOfIcon]})`
+  return(new mapboxgl.Marker(markerDomEl).setLngLat(coords))
 }
 
-const markerDomEl = document.createElement('div'); // Create a new, detached DIV
-markerDomEl.style.width = '32px';
-markerDomEl.style.height = '39px';
-markerDomEl.style.backgroundImage = 'url(http://i.imgur.com/WbMOfMl.png)';
-
-//new mapboxgl.Marker(markerDomEl).setLngLat([-87.641, 41.895]).addTo(map); // [-87.641, 41.895] for Chicago
-
-
-// const hotels = document.createElement("div"); // Create a new, detached DIV
-// hotels.style.width = "32px";
-// hotels.style.height = "39px";
-// hotels.style.backgroundImage = "url(http://i.imgur.com/D9574Cu.png)";
 
 module.exports = buildMarker;
